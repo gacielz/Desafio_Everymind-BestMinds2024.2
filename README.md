@@ -1,0 +1,1 @@
+# Desafio_Everymind-BestMinds2024.2
