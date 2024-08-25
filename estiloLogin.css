@@ -1,0 +1,33 @@
+
+body {
+    background: rgb(145, 179, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+form{
+    width: 300px;
+}
+input, button {
+    padding: 6px;
+    margin-bottom: 10px;
+    width: -webkit-fill-available;
+}
+button {
+    cursor: pointer;
+}
+button:active {
+    opacity: 0.6;
+}
+.clear {
+    background: transparent;
+    border: none;
+    color: white
+}
+.solid {
+    background: white;
+    border: none;
+    color: rgb(145, 179, 230);
+}
+    
