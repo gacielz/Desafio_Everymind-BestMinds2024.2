@@ -20,6 +20,9 @@ button {
 button:active {
     opacity: 0.6;
 }
+button[disabled] {
+    opacity: 0.7;
+}
 .clear {
     background: transparent;
     border: none;
@@ -29,5 +32,14 @@ button:active {
     background: white;
     border: none;
     color: rgb(145, 179, 230);
+}
+.outline {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+.error {
+    color: red;
+    display: none;
 }
     
