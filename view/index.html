@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login - Nunes Sports</title>
     <link rel="stylesheet" href="../CSS/index.css"/>
     <link rel="stylesheet" href="../CSS/global.css"/>
 </head>
-<body>
+<body class = "centralize">
     <form>
         <div class = "form-field">
             <div><label>Login</label></div>
@@ -21,18 +21,29 @@
             <div class = "error" id = "password-required-error">Senha é obrigatória</div>
         </div>
         <div>
-            <button type = "button" class = "clear" id = "recover-password-button" disabled = "true">Esqueci minha senha</button>
+            <button type = "button" class = "clear" id = "recover-password-button" onclick = "recoverPassword()" disabled = "true">Esqueci minha senha</button>
         </div>
         <div>
-            <button type = "button" class = "solid" id = "login-button" disabled = "true">Entrar</button>
-        </div>
-        <div>
-            <button type = "button" class = "outline" disabled = "true">Cadastrar</button>
-        </div>
-        
+            <button type = "button" class = "solid" id = "login-button" disabled = "true" onclick = "login()">Entrar</button>
+        </div>  
     </form>
 </body>
 
 <script src = "../JS/index.js"></script>
 <script src = "../JS/validations.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyD-Wjzo80bBbtrSgtCX-cpxCOPcdPhjpRY",
+        authDomain: "nunes-sport.firebaseapp.com",
+        projectId: "nunes-sport",
+        storageBucket: "nunes-sport.appspot.com",
+        messagingSenderId: "1023887899779",
+        appId: "1:1023887899779:web:c2f26b307b3db2b7c0efb6"
+      };
+    
+      firebase.initializeApp(firebaseConfig);
+
+</script>
 </html>

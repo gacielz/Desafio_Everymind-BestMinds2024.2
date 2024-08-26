@@ -1,9 +1,6 @@
 
 body {
     background: rgb(145, 179, 230);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 form{

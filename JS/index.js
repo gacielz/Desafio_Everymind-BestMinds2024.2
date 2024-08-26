@@ -1,13 +1,38 @@
 function onChangeEmail() {
     toggleButtonsDisabled();
     toggleEmailErrors();
-   
 }
 
 function onChangePassword(){
    toggleButtonsDisabled(); 
-   togglePasswordErrors();
-    
+   togglePasswordErrors(); 
+}
+
+function login() {
+    firebase.auth().signInWithEmailAndPassword(
+        form.email().value, form.password().value
+    ).then(response => {
+        window.location.href = "home.html";
+    }).catch(error => {
+        alert(getErrorMessage(error));
+    });
+}
+
+function getErrorMessage(error) {
+    if (error.code == "auth/invalid-credential") {
+        return "Usuário não encontrado";
+    }
+    return error.message;
+}
+
+function recoverPassword() {
+    firebase.auth().sendPasswordResetEmail(
+        form.email().value
+    ).then(response => {
+        alert('Um email foi enviado para a redefinição da senha');
+    }).catch(error => {
+        alert(getErrorMessage(error));
+    });
 }
 
 function isEmailValid() {
