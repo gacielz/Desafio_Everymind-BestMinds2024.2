@@ -12,6 +12,14 @@ button:active {
 button[disabled] {
     opacity: 0.7;
 }
+button.add {
+    width: 124px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    box-shadow: 2px 2px 2px gray;
+}
+
 input, button {
     padding: 6px;
     width: -webkit-fill-available;

@@ -7,3 +7,17 @@ header {
 header button {
     width: auto;
 }
+th, td {
+    border: 1px solid gray;
+}
+tbody tr {
+    cursor: pointer;
+}
+tbody tr:hover {
+    opacity: 0.8;
+}
+table {
+    border-collapse: collapse;
+    background: white;
+    padding: 8px 16px;
+}
