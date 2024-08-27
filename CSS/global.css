@@ -1,8 +1,20 @@
+body {
+    background: rgb(145, 179, 230);
+    height: 100vh;
+}
+button {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
 button:active {
     opacity: 0.6;
 }
 button[disabled] {
     opacity: 0.7;
+}
+input, button {
+    padding: 6px;
+    width: -webkit-fill-available;
 }
 .centralize {
     display: flex;
