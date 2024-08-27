@@ -1,3 +1,9 @@
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        window.Location.href = "../view/home.html";
+    }
+})
+
 function onChangeEmail() {
     toggleButtonsDisabled();
     toggleEmailErrors();
@@ -12,7 +18,7 @@ function login() {
     firebase.auth().signInWithEmailAndPassword(
         form.email().value, form.password().value
     ).then(response => {
-        window.location.href = "home.html";
+        window.location.href = "../view/home.html";
     }).catch(error => {
         alert(getErrorMessage(error));
     });
