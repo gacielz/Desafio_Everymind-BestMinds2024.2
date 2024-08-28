@@ -8,6 +8,9 @@ function logout(){
 
 findProducts();
 
+function newProduct() {
+    window.location.href = "../view/products.html";
+}
 function findProducts() {
     firebase.firestore()
         .collection('products')

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adição de produtos - Nunes Sports</title>
+    <link rel="stylesheet" href="../CSS/global.css"/>
+    <link rel="stylesheet" href="../CSS/products.css"/>
+</head>
+<body>
+    <header>
+        <button type = "button" class = "clear" onclick = "logout()">Sair</button>
+    </header>
+    <main class = "centralize">
+        <form>
+            <div class = "form-field"><h1>ADICIONAR UM PRODUTO</h1></div>
+            <div class = "form-field">
+                <div><label>Nome</label></div>
+                <input name = "name" id = "name" placeholder = "Nome"/>   
+            </div>
+            <div class = "form-field">
+                <div><label>Código</label></div>
+                <input type = "number" id = "code" placeholder = "0000"/>   
+            </div>
+            <div class = "form-field">
+                <div><label>Descrição</label></div>
+                <input type = "text" id = "desc"/>   
+            </div>
+            <div class = "form-field">
+                <div><label>Preço</label></div>
+                <input type = "text" id = "price-input" placeholder = "R$ 0,00">   
+            </div>
+            <div class = "bt">
+                <button type = "button" class = "solid ">Salvar</button>
+                <button type = "button" class = "clear">Cancelar</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+<script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src = "../JS/firebase-init.js"></script>
+<script src = "../JS/auth-guard.js"></script>
+<script src = "../JS/products.js"></script>
+
+</html>

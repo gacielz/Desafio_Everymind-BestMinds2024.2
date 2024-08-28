@@ -1,0 +1,13 @@
+form{
+    width: 600px;
+}
+
+main {
+    height: 100vh;
+}
+
+.bt {
+    margin-left: 400px;
+    display: flex;
+    justify-content: center;
+}

@@ -1,19 +1,14 @@
 body {
     height: 100vh;
 }
-header {
-    text-align: right;
-}
-header button {
-    width: auto;
-}
+
 th, td {
     border: 1px solid gray;
 }
 tr {
     cursor: pointer;
 }
-tr:hover {
+td:hover {
     opacity: 0.5;
 }
 table {
