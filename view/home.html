@@ -12,7 +12,7 @@
         <button type = "button" class = "clear" onclick = "logout()">Sair</button>
     </header>
     <button class = "add">Adicionar produto</button>
-    <table>
+    <table id = "products">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -22,18 +22,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Mercurial</td>
-                <td>1476</td>
-                <td>Chuteira campo</td>
-                <td>R$ 249,99</td>
-            </tr>
         </tbody>
     </table>
 </body>
 
 <script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 <script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
 <script src = "../JS/firebase-init.js"></script>
 <script src = "../JS/auth-guard.js"></script>
 <script src = "../JS/home.js"></script>

@@ -10,11 +10,11 @@ header button {
 th, td {
     border: 1px solid gray;
 }
-tbody tr {
+tr {
     cursor: pointer;
 }
-tbody tr:hover {
-    opacity: 0.8;
+tr:hover {
+    opacity: 0.5;
 }
 table {
     border-collapse: collapse;

@@ -34,7 +34,7 @@ function getErrorMessage(error) {
 function recoverPassword() {
     firebase.auth().sendPasswordResetEmail(
         form.email().value
-    ).then(response => {
+    ).then(() => {
         alert('Um email foi enviado para a redefinição da senha');
     }).catch(error => {
         alert(getErrorMessage(error));
