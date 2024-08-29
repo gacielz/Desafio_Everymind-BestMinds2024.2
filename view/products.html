@@ -15,23 +15,25 @@
         <form>
             <div class = "form-field"><h1>ADICIONAR UM PRODUTO</h1></div>
             <div class = "form-field">
-                <div><label>Nome</label></div>
-                <input name = "name" id = "name" placeholder = "Nome"/>   
+                <div><label>Nome *</label></div>
+                <input type = "name" id = "name" placeholder = "Nome" onchange = "onChangeName()"/> 
+                <div class = "error" id = "name-required-error">Nome é obrigatório</div>  
             </div>
             <div class = "form-field">
                 <div><label>Código</label></div>
                 <input type = "number" id = "code" placeholder = "0000"/>   
             </div>
             <div class = "form-field">
-                <div><label>Descrição</label></div>
-                <input type = "text" id = "desc"/>   
+                <div><label>Descrição *</label></div>
+                <input type = "text" id = "desc" onchange = "onChangeDesc()"/>
+                <div class = "error" id = "desc-required-error">Descrição é obrigatória</div>   
             </div>
             <div class = "form-field">
                 <div><label>Preço</label></div>
-                <input type = "text" id = "price-input" placeholder = "R$ 0,00">   
+                <input type = "text" id = "price-input" placeholder = "R$ 0,00">
             </div>
             <div class = "bt">
-                <button type = "button" class = "solid ">Salvar</button>
+                <button type = "button" class = "solid" disabled id = "save-button">Salvar</button>
                 <button type = "button" class = "clear">Cancelar</button>
             </div>
         </form>
