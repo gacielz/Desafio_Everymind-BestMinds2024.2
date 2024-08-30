@@ -1,19 +1,23 @@
+// Função que observa o estado de autenticação do usuário
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         window.location.href = "../view/home.html";
     }
-})
+});
 
+// Função chamada quando o campo de e-mail é alterado
 function onChangeEmail() {
     toggleButtonsDisabled();
     toggleEmailErrors();
 }
 
+// Função chamada quando o campo de senha é alterado
 function onChangePassword(){
    toggleButtonsDisabled(); 
    togglePasswordErrors(); 
 }
 
+// Função de login usando e-mail e senha
 function login() {
     firebase.auth().signInWithEmailAndPassword(
         form.email().value, form.password().value
@@ -24,6 +28,12 @@ function login() {
     });
 }
 
+// Função que redireciona para a tela de registro
+function register() {
+    window.location.href = "../view/register.html"
+}
+ 
+// Função que retorna uma mensagem de erro personalizada com base no código de erro
 function getErrorMessage(error) {
     if (error.code == "auth/invalid-credential") {
         return "Usuário não encontrado";
@@ -31,6 +41,7 @@ function getErrorMessage(error) {
     return error.message;
 }
 
+// Função para recuperação de senha
 function recoverPassword() {
     firebase.auth().sendPasswordResetEmail(
         form.email().value
@@ -41,6 +52,7 @@ function recoverPassword() {
     });
 }
 
+// Função para verificar se o e-mail é válido
 function isEmailValid() {
     const email = form.email().value;
     if (!email) {
@@ -49,17 +61,20 @@ function isEmailValid() {
     return validateEmail(email);
 }
 
+// Função que exibe ou oculta os erros de e-mail
 function toggleEmailErrors() {
     const email = form.email().value;
     form.emailRequiredError().style.display = email ? "none" : "block";
     form.emailInvalidError().style.display = validateEmail(email) ? "none" : "block";
 }
 
+// Função que exibe ou oculta os erros de senha
 function togglePasswordErrors() {
     const password = form.password().value;
     form.passwordRequiredError().style.display = password ? "none" : "block";
 }
 
+// Função que ativa ou desativa os botões de acordo com a validação dos campos
 function toggleButtonsDisabled() {
     const emailValid = isEmailValid();
     form.recoverPassword().disabled = !emailValid;
@@ -68,6 +83,7 @@ function toggleButtonsDisabled() {
     form.loginButton().disabled = !emailValid || !passwordValid;
 }
 
+// Função que verifica se a senha é válida
 function isPasswordValid() {
     const password = form.password().value;
     if (!password) {
@@ -76,6 +92,7 @@ function isPasswordValid() {
     return true;
 }
 
+// Objeto que contém referências aos elementos do formulário na página
 const form = {
     email: () => document.getElementById('email'),
     emailInvalidError: () => document.getElementById('email-invalid-error'),

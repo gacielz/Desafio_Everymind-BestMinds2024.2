@@ -1,3 +1,4 @@
+// Objeto de configuração do Firebase com as credenciais específicas do projeto
 const firebaseConfig = {
     apiKey: "AIzaSyD-Wjzo80bBbtrSgtCX-cpxCOPcdPhjpRY",
     authDomain: "nunes-sport.firebaseapp.com",

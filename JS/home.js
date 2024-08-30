@@ -1,3 +1,4 @@
+// Função para realizar o logout do usuário
 function logout(){
     firebase.auth().signOut().then(() => {
         window.location.href = "../view/index.html"
@@ -8,10 +9,12 @@ function logout(){
 
 findProducts();
 
+// Função para redirecionar para a página de adicionar/editar um novo produto
 function newProduct() {
     window.location.href = "../view/products.html";
 }
 
+// Função para buscar os produtos do Firestore usando o serviço de produtos
 function findProducts() {
     productService.find()
         .then(products => {
@@ -22,6 +25,7 @@ function findProducts() {
         })
 }
 
+// Função para adicionar produtos na tabela HTML
 function addProductsToScreen(products) {
     const table = document.getElementById('products');
 
@@ -47,6 +51,7 @@ function addProductsToScreen(products) {
     });
 }
 
+// Função para criar um item de produto na tabela
 function createProductTableItem(product) {
     const tr = document.createElement('tr');
         tr.id = product.uid;
@@ -56,6 +61,7 @@ function createProductTableItem(product) {
         return tr;
 }
 
+// Função para criar um botão de deletar para cada produto
 function createDeleteButton(product) {
     const tdDeleteButton = document.createElement('td');
     const deleteButton = document.createElement('button');
@@ -70,12 +76,14 @@ function createDeleteButton(product) {
     return tdDeleteButton;
 }
 
+// Função para criar um elemento de célula (td) com o valor fornecido
 function createItem(value) {
     const element = document.createElement('td');
     element.textContent = value;
     return element;
 }
 
+// Função para perguntar ao usuário se ele deseja remover um produto
 function askRemoveProduct(product) {
     const shouldRemove = confirm('Deseja remover o produto?');
     if (shouldRemove) {
@@ -83,6 +91,7 @@ function askRemoveProduct(product) {
     }
 }
 
+// Função para remover um produto do Firestore e da tela
 function removeProduct(product) {
     productService.remove(product)
         .then(() => {
