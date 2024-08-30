@@ -9,23 +9,25 @@
 </head>
 <body>
     <header>
-        <button type = "button" class = "clear" onclick = "logout()">Sair</button>
+        <button type = "button" class = "clear" onclick = "logout()">Logout</button>
     </header>
-        <main>
-            <div class = "form-field btn-add"><button class = "add solid" onclick = "newProduct()">Adicionar produto</button></div>
-            <div class = "centralize">
-                <table id = "products">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Código</th>
-                            <th>Descrição</th>
-                            <th>Preço</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </main>
+    <main>
+        <div class = "form-field"><h1>PRODUTOS NUNES SPORTS</h1></div>
+        <div class = "form-field btn-add"><button class = "add solid" onclick = "newProduct()">Adicionar produto</button></div>
+        <div class = "centralize">
+            <table id = "products">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th class = "non-border-right">Preço</th>
+                        <th class = "non-border-left"></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </main>
 </body>
 
 <script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
@@ -33,6 +35,7 @@
 <script src = "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
 <script src = "../JS/firebase-init.js"></script>
 <script src = "../JS/auth-guard.js"></script>
+<script src = "../services/product.service.js"></script>
 <script src = "../JS/home.js"></script>
 
 

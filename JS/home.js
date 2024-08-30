@@ -13,16 +13,12 @@ function newProduct() {
 }
 
 function findProducts() {
-    firebase.firestore()
-        .collection('products')
-        .orderBy('name', 'asc')
-        .get()
-        .then(snapshot => {
-            const products = snapshot.docs.map(doc => ({
-                ...doc.data(),
-                uid: doc.id
-        }));
+    productService.find()
+        .then(products => {
             addProductsToScreen(products);
+        }).catch(error => {
+            console.log(error);
+            alert("Erro ao recuperar produtos");
         })
 }
 
@@ -30,28 +26,70 @@ function addProductsToScreen(products) {
     const table = document.getElementById('products');
 
     products.forEach(product => {
-        console.log(product);
-        const tr = document.createElement('tr');
-        tr.addEventListener('click' , () => {
-            window.location.href = "../view/products.html?uid=" + product.uid;
-        })
+        const tr = createProductTableItem(product);
 
-        const tdName = document.createElement('td');
-        tdName.textContent = product.name;
-        tr.appendChild(tdName);
+        tr.appendChild(createItem(product.name));
 
         const tdCode = document.createElement('td');
         tdCode.textContent = product.code;
         tr.appendChild(tdCode);
 
-        const tdDescription = document.createElement('td');
-        tdDescription.textContent = product.desc;
-        tr.appendChild(tdDescription);
+        tr.appendChild(createItem(product.desc));
 
         const tdPrice = document.createElement('td');
         tdPrice.textContent = product.price;
+        tdPrice.classList.add('non-border-right')
         tr.appendChild(tdPrice);
+        
+        tr.appendChild(createDeleteButton(product));
 
         table.appendChild(tr);
     });
+}
+
+function createProductTableItem(product) {
+    const tr = document.createElement('tr');
+        tr.id = product.uid;
+        tr.addEventListener('click' , () => {
+            window.location.href = "../view/products.html?uid=" + product.uid;
+        })
+        return tr;
+}
+
+function createDeleteButton(product) {
+    const tdDeleteButton = document.createElement('td');
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('danger');
+    deleteButton.addEventListener('click', event => {
+        event.stopPropagation();
+        askRemoveProduct(product);
+    })
+    deleteButton.innerHTML = "Remover";
+    tdDeleteButton.classList.add('non-border-left');
+    tdDeleteButton.appendChild(deleteButton);
+    return tdDeleteButton;
+}
+
+function createItem(value) {
+    const element = document.createElement('td');
+    element.textContent = value;
+    return element;
+}
+
+function askRemoveProduct(product) {
+    const shouldRemove = confirm('Deseja remover o produto?');
+    if (shouldRemove) {
+        removeProduct(product);
+    }
+}
+
+function removeProduct(product) {
+    productService.remove(product)
+        .then(() => {
+            document.getElementById(product.uid).remove();
+        }).catch(error => {
+            console.log(error);
+            alert("Erro ao remover produto");
+        })
+
 }

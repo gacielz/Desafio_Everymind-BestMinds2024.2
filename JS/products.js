@@ -13,13 +13,10 @@ function isNewProduct() {
 }
 
 function findProductByUid(uid) {
-    firebase.firestore()
-        .collection("products")
-        .doc(uid)
-        .get()
-        .then(doc => {
-            if(doc.exists) {
-                fillProductScreen(doc.data());
+    productService.findByUid(uid)
+        .then(product => {
+            if(product) {
+                fillProductScreen(product);
                 toggleSaveButtonDisabled();
             } else {
                 alert("Documento não encontrado");
@@ -77,9 +74,7 @@ function saveProduct() {
 }
 
 function save(product) {
-    firebase.firestore()
-        .collection ("products")
-        .add(newProduct)
+    productService.save(product)
         .then(() => {
             window.location.href = "../view/home.html"
         }).catch(() => {
@@ -88,10 +83,7 @@ function save(product) {
 }
 
 function update(product) {
-    firebase.firestore()
-        .collection("products")
-        .doc(getProductUid())
-        .update(product)
+    productService.update(product)
         .then(() => {
             window.location.href = "../view/home.html"
         }).catch(() => {

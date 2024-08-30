@@ -5,12 +5,15 @@ body {
 th, td {
     border: 1px solid gray;
 }
+
 tr {
     cursor: pointer;
 }
+
 td:hover {
     opacity: 0.5;
 }
+
 table {
     border-collapse: collapse;
     background: white;
@@ -20,13 +23,42 @@ table {
     margin-right: 210px;
     margin-left: 210px;
 }
+
 main {
     margin-top: 80px;
     width: 100%;
-    text-align: center;
-    
+    text-align: center; 
 }
+
+button {
+    cursor: pointer;
+}
+
+button.danger {
+    width: auto;
+    float: left;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    display: none;
+}
+
+tr:hover button.danger{
+    display: block; 
+}
+
 .btn-add {
     text-align: right;
     margin-right: 210px;
+}
+
+.non-border-right {
+    border-right: none;
+}
+
+.non-border-left {
+    border-left: none;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

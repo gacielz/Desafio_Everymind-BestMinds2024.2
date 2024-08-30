@@ -3,11 +3,6 @@ body {
     height: 100vh;
 }
 
-button {
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
 button:active {
     opacity: 0.6;
 }
@@ -52,6 +47,12 @@ input, button {
     background: transparent;
     border: none;
     color: white
+}
+
+.danger {
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
 }
 
 .form-field {
