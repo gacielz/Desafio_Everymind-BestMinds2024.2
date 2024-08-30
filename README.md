@@ -21,3 +21,7 @@ redireciona para a tela de registrar um novo produto, que permite preencher os d
 do novo registro e salva-lo no database, vindo este a ser exibido na tabela da home.
 O botão Logout, que fica no canto superior direito da tela, realiza o logout do usuário
 quando acionado.
+
+Usuário existente:
+Login: teste@gmail.com
+Senha: 123456
