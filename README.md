@@ -1,9 +1,5 @@
 # Desafio_Everymind-BestMinds2024.2
 
-Infelizmente não foi alcançado o objetivo de desenvolver APIs a tempo, porém, 
-mesmo com chamadas diretas ao database para realização de CRUD, o sistema está
-funcional e atende a todos os requisitos do desafio.
-
 Na tela de início (index), é possível realizar login de forma convencional (com email
 e senha), selecionar a opção "Esqueci minha senha", que envia um email de redefinição para
 o email digitado no campo, e, selecionar a opção "Registrar", caso ainda não seja
@@ -21,6 +17,10 @@ redireciona para a tela de registrar um novo produto, que permite preencher os d
 do novo registro e salva-lo no database, vindo este a ser exibido na tabela da home.
 O botão Logout, que fica no canto superior direito da tela, realiza o logout do usuário
 quando acionado.
+
+Infelizmente não foi alcançado o objetivo de desenvolver APIs a tempo, porém, 
+mesmo com chamadas diretas ao database para realização de CRUD, o sistema está
+funcional e atende a todos os requisitos do desafio.
 
 Usuário existente:
 Login: teste@gmail.com
